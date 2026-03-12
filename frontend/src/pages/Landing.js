@@ -90,10 +90,14 @@ const Landing = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-yellow-500/20">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shadow-lg">
-              <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-red-400/30 rounded-2xl blur-md"></div>
+              <img src="/planet-express-logo.png" alt="Planet Express" className="relative w-16 h-16 object-contain" />
             </div>
-            <span className="text-xl font-bold text-white">Planet Express</span>
+            <div>
+              <span className="text-2xl font-bold text-white">Planet Express</span>
+              <div className="text-xs text-yellow-400 font-semibold">Express Delivery Since 2999</div>
+            </div>
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-slate-300 hover:text-yellow-400 transition-colors">Features</a>
@@ -125,24 +129,25 @@ const Landing = () => {
         <div className={`container mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-6 bg-red-500/20 text-red-300 border-red-500/50 hover:bg-red-500/30 shadow-lg">
-                <Zap className="w-4 h-4 mr-2" /> Good news everyone! Now 10x faster
+              <Badge className="mb-6 bg-gradient-to-r from-red-600/30 to-orange-600/30 text-yellow-300 border-yellow-500/50 hover:bg-red-500/40 shadow-lg animate-pulse">
+                <Zap className="w-4 h-4 mr-2" /> Good news everyone! Interplanetary file delivery at light speed! 
               </Badge>
               <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 {heroData.title}
+                <span className="block text-4xl lg:text-5xl text-yellow-400 mt-2">Delivered Faster Than The Planet Express Ship!</span>
               </h1>
               <p className="text-xl text-slate-300 mb-4">
-                {heroData.subtitle}
+                No mission too big, no file too small - We deliver anywhere in the universe!
               </p>
-              <p className="text-lg text-slate-400 mb-8">
-                {heroData.description}
+              <p className="text-lg text-yellow-400/80 mb-8">
+                ⚡ {heroData.description} - Powered by our fleet of delivery rockets!
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold text-lg px-8 shadow-xl">
-                  {heroData.ctaPrimary} <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
+                  🚀 {heroData.ctaPrimary} <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 text-lg px-8">
-                  {heroData.ctaSecondary}
+                <Button size="lg" variant="outline" className="border-2 border-yellow-500/50 text-yellow-300 hover:bg-yellow-500/10 hover:border-yellow-400 text-lg px-8">
+                  📺 {heroData.ctaSecondary}
                 </Button>
               </div>
               
@@ -173,11 +178,14 @@ const Landing = () => {
       <section id="features" className="py-20 px-6 bg-slate-950">
         <div className="container mx-auto">
           <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+              ⚡ DELIVERY FEATURES
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Powerful Features
+              Powerful Features for Any Delivery Mission
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Everything you need for secure, fast, and reliable file transfers
+              From Earth to the edge of the universe - we've got the tech to deliver your files safely!
             </p>
           </div>
           
@@ -212,11 +220,14 @@ const Landing = () => {
       <section id="how-it-works" className="py-20 px-6 bg-gradient-to-b from-slate-950 to-slate-900">
         <div className="container mx-auto">
           <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+              🛸 DELIVERY PROCESS
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              How It Works
+              How Planet Express Delivers Your Files
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Three simple steps to transfer your files securely
+              Three simple steps to interplanetary file transfer
             </p>
           </div>
           
@@ -259,11 +270,14 @@ const Landing = () => {
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
+            <Badge className="mb-4 bg-red-500/20 text-red-300 border-red-500/50">
+              🔒 MAXIMUM SECURITY
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Security First
+              Safer Than Professor Farnsworth's Safe
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Your data security is our top priority
+              Military-grade protection for all your deliveries across space and time
             </p>
           </div>
           
@@ -291,11 +305,14 @@ const Landing = () => {
       <section id="pricing" className="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="container mx-auto">
           <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+              💰 DELIVERY RATES
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Simple, Transparent Pricing
+              Simple Pricing for All Solar Systems
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Choose the plan that fits your needs
+              Choose your delivery plan - No hidden fees, no Slurm required!
             </p>
           </div>
           
@@ -336,10 +353,10 @@ const Landing = () => {
                 </CardContent>
                 <CardFooter>
                   <Button 
-                    className={`w-full rounded-xl ${
+                    className={`w-full rounded-xl transform hover:scale-105 transition-all ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg' 
-                        : 'bg-slate-800 hover:bg-slate-700 text-white'
+                        ? 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold shadow-lg hover:shadow-yellow-500/50' 
+                        : 'bg-slate-800 hover:bg-slate-700 text-white border border-yellow-500/30'
                     }`}
                   >
                     {plan.cta}
@@ -355,11 +372,14 @@ const Landing = () => {
       <section id="faq" className="py-20 px-6 bg-slate-950">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+              ❓ QUESTIONS?
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-slate-400">
-              Everything you need to know
+              Everything you need to know about our delivery service
             </p>
           </div>
           
@@ -386,15 +406,18 @@ const Landing = () => {
       <section id="contact" className="py-20 px-6 bg-gradient-to-b from-slate-950 to-slate-900">
         <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-12">
+            <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
+              📡 CONTACT CENTRAL
+            </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Get In Touch
+              Send Us A Transmission
             </h2>
             <p className="text-xl text-slate-400">
-              Have questions? We'd love to hear from you.
+              Have questions? Our delivery crew is standing by! (Well, sitting mostly)
             </p>
           </div>
           
-          <Card className="bg-slate-900/50 border-2 border-yellow-500/30 backdrop-blur-sm rounded-2xl">
+          <Card className="bg-slate-900/50 border-2 border-yellow-500/30 backdrop-blur-sm rounded-2xl shadow-xl shadow-yellow-500/10">
             <CardContent className="pt-6">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div className="space-y-2">
@@ -449,12 +472,12 @@ const Landing = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg rounded-xl"
+                  className="w-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold shadow-lg rounded-xl transform hover:scale-105 transition-all hover:shadow-yellow-500/50"
                   size="lg"
                   disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? '🚀 Sending Transmission...' : '📡 Send Transmission'}
                 </Button>
               </form>
             </CardContent>
@@ -468,13 +491,20 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shadow-lg">
-                  <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-red-400/30 rounded-2xl blur-md"></div>
+                  <img src="/planet-express-logo.png" alt="Planet Express" className="relative w-16 h-16 object-contain" />
                 </div>
-                <span className="text-xl font-bold text-white">Planet Express</span>
+                <div>
+                  <span className="text-2xl font-bold text-white">Planet Express</span>
+                  <div className="text-xs text-yellow-400 font-semibold">Express Delivery Since 2999</div>
+                </div>
               </div>
               <p className="text-slate-400">
-                Our crew is replaceable. Your files aren't.
+                "Our crew is replaceable. Your files aren't."
+              </p>
+              <p className="text-slate-500 text-sm mt-2 italic">
+                - Professor Hubert J. Farnsworth
               </p>
             </div>
             

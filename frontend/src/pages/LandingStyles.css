@@ -55,29 +55,52 @@
   }
 }
 
-/* Card Hover Effects with Yellow Glow */
-.landing-page [class*="card"]:hover {
-  box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+@keyframes speed-lines {
+  0% {
+    transform: translateX(0) scaleX(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-100px) scaleX(0.5);
+    opacity: 0;
+  }
 }
 
-/* Button Hover Effects */
+/* Card Hover Effects with Golden Glow */
+.landing-page [class*="card"]:hover {
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.4);
+}
+
+/* Button Hover Effects - Enhanced with Transform */
 .landing-page button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
   border-radius: 12px;
 }
 
 .landing-page button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(234, 179, 8, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(245, 158, 11, 0.4);
 }
 
 .landing-page button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+}
+
+/* Golden Button Glow */
+.landing-page button.bg-gradient-to-r {
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
 /* Link Hover Effects */
 .landing-page a {
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.landing-page a:hover {
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
 }
 
 /* Image Hover Effects */
@@ -87,7 +110,7 @@
 
 .landing-page img:hover {
   transform: scale(1.02);
-  filter: brightness(1.1);
+  filter: brightness(1.1) drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
 }
 
 /* Smooth Scrolling */
@@ -100,30 +123,32 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* Gradient Text Effect - Yellow/Red Theme */
+/* Gradient Text Effect - Golden Theme */
 .gradient-text {
-  background: linear-gradient(135deg, #eab308 0%, #ef4444 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Custom Scrollbar - Planet Express Theme */
+/* Custom Scrollbar - Golden Planet Express Theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
   background: #0f172a;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #eab308, #dc2626);
-  border-radius: 5px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b, #dc2626);
+  border-radius: 6px;
+  border: 2px solid #0f172a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #facc15, #ef4444);
+  background: linear-gradient(180deg, #fcd34d, #fbbf24, #ef4444);
 }
 
 /* Responsive Typography */
@@ -142,18 +167,18 @@ section {
   gap: 2rem;
 }
 
-/* Focus States - Yellow Theme */
+/* Focus States - Golden Theme */
 .landing-page input:focus,
 .landing-page textarea:focus {
   outline: none;
-  border-color: #eab308;
-  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25);
 }
 
 /* Loading Animation for Images */
 .landing-page img {
   opacity: 0;
-  animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.6s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -164,22 +189,22 @@ section {
 
 /* Backdrop Blur Enhancement */
 .backdrop-blur-xl {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
 }
 
 .backdrop-blur-sm {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
 }
 
-/* Shadow Enhancements - Yellow/Red Glow */
+/* Shadow Enhancements - Golden Glow */
 .shadow-glow {
-  box-shadow: 0 0 40px rgba(234, 179, 8, 0.4);
+  box-shadow: 0 0 50px rgba(245, 158, 11, 0.5);
 }
 
 /* Interactive Border Effect - Planet Express Colors */
 .border-animate {
   position: relative;
-  border: 1px solid rgba(234, 179, 8, 0.3);
+  border: 2px solid rgba(245, 158, 11, 0.4);
 }
 
 .border-animate::before {
@@ -188,7 +213,7 @@ section {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #eab308, #dc2626);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #dc2626);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -202,16 +227,52 @@ section {
 
 /* Rounded Corners Everywhere - Cartoon Style */
 .landing-page [class*="rounded"] {
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 /* Comic-style Shadow for Cards */
 .landing-page .card-comic {
-  box-shadow: 4px 4px 0px rgba(234, 179, 8, 0.3);
+  box-shadow: 6px 6px 0px rgba(245, 158, 11, 0.4);
 }
 
-/* Retro Sci-Fi Glow */
+/* Retro Sci-Fi Glow - Enhanced */
 .retro-glow {
-  text-shadow: 0 0 10px rgba(234, 179, 8, 0.5),
-               0 0 20px rgba(220, 38, 38, 0.3);
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.6),
+               0 0 30px rgba(245, 158, 11, 0.4),
+               0 0 45px rgba(220, 38, 38, 0.2);
+}
+
+/* Badge Pulse Animation */
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+  }
+}
+
+.animate-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+/* Rocket Speed Lines Effect */
+.speed-lines::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.6));
+  animation: speed-lines 1s ease-out infinite;
+}
+
+/* Golden Gradient Backgrounds */
+.bg-golden-gradient {
+  background: linear-gradient(135deg, 
+    rgba(251, 191, 36, 0.1) 0%, 
+    rgba(245, 158, 11, 0.15) 50%, 
+    rgba(220, 38, 38, 0.1) 100%
+  );
 }
