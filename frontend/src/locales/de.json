@@ -1,0 +1,227 @@
+{
+  "header": {
+    "companyName": "Planet Express",
+    "tagline": "Express-Lieferung Seit 2999",
+    "nav": {
+      "features": "Funktionen",
+      "howItWorks": "So Funktioniert's",
+      "pricing": "Preise",
+      "faq": "FAQ",
+      "contact": "Kontakt"
+    },
+    "signIn": "Anmelden",
+    "getStarted": "Jetzt Starten"
+  },
+  "hero": {
+    "badge": "Gute Nachrichten, alle zusammen! Interplanetare Dateiübertragung mit Lichtgeschwindigkeit!",
+    "title": "Blitzschnelle Dateiübertragung",
+    "subtitle": "Schneller Geliefert Als Das Planet Express Raumschiff!",
+    "description": "Keine Mission zu groß, keine Datei zu klein - Wir liefern überall im Universum!",
+    "features": "Übertragen Sie Dateien jeder Größe mit Enterprise-Sicherheit. Keine Limits, kein Aufwand. - Angetrieben von unserer Lieferraketen-Flotte!",
+    "ctaPrimary": "Kostenlos Testen",
+    "ctaSecondary": "Demo Ansehen"
+  },
+  "stats": {
+    "filesTransferred": "Übertragene Dateien",
+    "activeUsers": "Aktive Nutzer",
+    "uptimeSLA": "Verfügbarkeit SLA",
+    "countriesServed": "Bediente Länder"
+  },
+  "features": {
+    "badge": "LIEFER-FUNKTIONEN",
+    "title": "Leistungsstarke Funktionen für Jede Liefermission",
+    "subtitle": "Von der Erde bis zum Rand des Universums - wir haben die Technologie, um Ihre Dateien sicher zu liefern!",
+    "items": {
+      "unlimitedFileSize": {
+        "title": "Unbegrenzte Dateigröße",
+        "description": "Übertragen Sie Dateien jeder Größe ohne Komprimierung oder Qualitätsverlust. Von Dokumenten bis zu 4K-Videos."
+      },
+      "encryption": {
+        "title": "Ende-zu-Ende-Verschlüsselung",
+        "description": "Militärische Verschlüsselung stellt sicher, dass Ihre Dateien vom Upload bis zum Download sicher sind."
+      },
+      "speed": {
+        "title": "Blitzgeschwindigkeit",
+        "description": "Optimierte Übertragungsprotokolle liefern Ihre Dateien bis zu 10x schneller als herkömmliche Methoden."
+      },
+      "cdn": {
+        "title": "Globales CDN",
+        "description": "Verteiltes Netzwerk gewährleistet schnelle Übertragungen unabhängig vom geografischen Standort."
+      },
+      "collaboration": {
+        "title": "Team-Zusammenarbeit",
+        "description": "Teilen Sie Dateien mit Ihrem Team, setzen Sie Berechtigungen und verfolgen Sie, wer worauf zugegriffen hat."
+      },
+      "api": {
+        "title": "API-Integration",
+        "description": "Integrieren Sie nahtlos in Ihren bestehenden Workflow mit unserer leistungsstarken API."
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "LIEFERPROZESS",
+    "title": "So Liefert Planet Express Ihre Dateien",
+    "subtitle": "Drei einfache Schritte zur interplanetaren Dateiübertragung",
+    "steps": {
+      "upload": {
+        "title": "Laden Sie Ihre Dateien Hoch",
+        "description": "Ziehen Sie Dateien per Drag & Drop oder wählen Sie sie von Ihrem Gerät aus. Unterstützt alle Dateitypen."
+      },
+      "process": {
+        "title": "Sichere Verarbeitung",
+        "description": "Dateien werden verschlüsselt und für die Übertragung durch unser globales Netzwerk optimiert."
+      },
+      "deliver": {
+        "title": "Teilen & Liefern",
+        "description": "Erstellen Sie sichere Links und teilen Sie diese sofort. Empfänger laden mit maximaler Geschwindigkeit herunter."
+      }
+    },
+    "learnMore": "Mehr erfahren"
+  },
+  "security": {
+    "badge": "MAXIMALE SICHERHEIT",
+    "title": "Sicherer Als Professor Farnsworths Safe",
+    "subtitle": "Militärischer Schutz für alle Ihre Lieferungen durch Raum und Zeit",
+    "features": {
+      "encryption": {
+        "title": "256-Bit-Verschlüsselung",
+        "description": "Alle Dateien mit AES-256-Standard verschlüsselt"
+      },
+      "zeroKnowledge": {
+        "title": "Zero-Knowledge",
+        "description": "Wir können nicht auf Ihre Dateien zugreifen, nur Sie können das"
+      },
+      "compliance": {
+        "title": "Compliance-Bereit",
+        "description": "DSGVO, HIPAA und SOC 2 konform"
+      },
+      "autoDelete": {
+        "title": "Auto-Löschung",
+        "description": "Dateien werden nach Ablauf automatisch gelöscht"
+      }
+    }
+  },
+  "pricing": {
+    "badge": "LIEFERPREISE",
+    "title": "Einfache Preise für Alle Sonnensysteme",
+    "subtitle": "Wählen Sie Ihren Lieferplan - Keine versteckten Gebühren, kein Slurm erforderlich!",
+    "plans": {
+      "free": {
+        "name": "Kostenlos",
+        "price": "0€",
+        "period": "für immer",
+        "description": "Perfekt für den persönlichen Gebrauch",
+        "cta": "Loslegen",
+        "features": [
+          "Bis zu 2GB pro Übertragung",
+          "5 Übertragungen pro Tag",
+          "7-tägige Dateispeicherung",
+          "Basis-Verschlüsselung",
+          "E-Mail-Support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "19€",
+        "period": "pro Monat",
+        "description": "Für Profis und kleine Teams",
+        "badge": "Bester Wert - Von Bender Genehmigt!",
+        "cta": "Kostenlos Testen",
+        "features": [
+          "Bis zu 100GB pro Übertragung",
+          "Unbegrenzte Übertragungen",
+          "30-tägige Dateispeicherung",
+          "Erweiterte Verschlüsselung",
+          "Prioritäts-Support",
+          "Individuelles Branding",
+          "API-Zugang"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Individuell",
+        "period": "kontaktieren Sie uns",
+        "description": "Für große Organisationen",
+        "cta": "Vertrieb Kontaktieren",
+        "features": [
+          "Unbegrenzte Dateigröße",
+          "Unbegrenzte Übertragungen",
+          "Individuelle Speicherdauer",
+          "Dedizierte Infrastruktur",
+          "24/7 Telefon-Support",
+          "SSO & SAML",
+          "Erweiterte API",
+          "SLA-Garantie"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "badge": "FRAGEN?",
+    "title": "Häufig Gestellte Fragen",
+    "subtitle": "Alles, was Sie über unseren Lieferdienst wissen müssen",
+    "items": [
+      {
+        "question": "Wie sicher ist die Dateiübertragung?",
+        "answer": "Alle Dateien werden während der Übertragung und im Ruhezustand mit militärischer AES-256-Verschlüsselung verschlüsselt. Wir verwenden eine Zero-Knowledge-Architektur, was bedeutet, dass nur Sie auf Ihre Dateien zugreifen können. Wir sind außerdem DSGVO-, HIPAA- und SOC-2-konform."
+      },
+      {
+        "question": "Was ist die maximale Dateigröße, die ich übertragen kann?",
+        "answer": "Im kostenlosen Plan können Sie bis zu 2 GB pro Übertragung übertragen. Pro-Benutzer können bis zu 100 GB übertragen, und Enterprise-Kunden haben keine Dateigrößenbeschränkungen."
+      },
+      {
+        "question": "Wie lange werden Dateien gespeichert?",
+        "answer": "Dateien werden 7 Tage im kostenlosen Plan, 30 Tage im Pro-Plan und individuelle Aufbewahrungszeiten für Enterprise gespeichert. Sie können auch jederzeit benutzerdefinierte Ablaufzeiten festlegen oder Dateien manuell löschen."
+      },
+      {
+        "question": "Kann ich dies in meine bestehenden Tools integrieren?",
+        "answer": "Ja! Pro- und Enterprise-Pläne beinhalten API-Zugang. Wir bieten auch vorgefertigte Integrationen mit beliebten Tools wie Slack, Dropbox, Google Drive und mehr an."
+      },
+      {
+        "question": "Was passiert, wenn eine Übertragung fehlschlägt?",
+        "answer": "Unser System versucht automatisch, fehlgeschlagene Übertragungen erneut durchzuführen. Wenn eine Übertragung nicht abgeschlossen werden kann, werden Sie sofort benachrichtigt und können die Übertragung neu starten. Alle erfolgreich hochgeladenen Daten bleiben erhalten."
+      },
+      {
+        "question": "Bieten Sie eine Rückerstattungsrichtlinie an?",
+        "answer": "Ja, wir bieten eine 30-tägige Geld-zurück-Garantie für alle bezahlten Pläne. Wenn Sie nicht zufrieden sind, kontaktieren Sie unser Support-Team für eine vollständige Rückerstattung."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "KONTAKTZENTRALE",
+    "title": "Senden Sie Uns Eine Übertragung",
+    "subtitle": "Haben Sie Fragen? Unsere Liefercrew steht bereit! (Naja, sitzt meistens)",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre.email@beispiel.de",
+      "message": "Nachricht",
+      "messagePlaceholder": "Sagen Sie uns, wie wir helfen können...",
+      "submit": "Übertragung Senden",
+      "submitting": "Sende Übertragung..."
+    }
+  },
+  "footer": {
+    "tagline": "\"Unsere Crew ist ersetzbar. Ihre Dateien nicht.\"",
+    "quote": "- Professor Hubert J. Farnsworth",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "api": "API",
+      "documentation": "Dokumentation",
+      "about": "Über Uns",
+      "blog": "Blog",
+      "careers": "Karriere",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "security": "Sicherheit",
+      "compliance": "Compliance"
+    },
+    "copyright": "© 2024 Planet Express. Alle Rechte vorbehalten."
+  }
+}

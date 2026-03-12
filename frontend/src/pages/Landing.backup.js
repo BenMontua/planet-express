@@ -170,24 +170,24 @@ const Landing = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-6 bg-gradient-to-r from-red-600/30 to-orange-600/30 text-yellow-300 border-yellow-500/50 hover:bg-red-500/40 shadow-lg animate-pulse">
-                <Zap className="w-4 h-4 mr-2" /> {t('hero.badge')} 
+                <Zap className="w-4 h-4 mr-2" /> Good news everyone! Interplanetary file delivery at light speed! 
               </Badge>
               <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                {t('hero.title')}
-                <span className="block text-4xl lg:text-5xl text-yellow-400 mt-2">{t('hero.subtitle')}</span>
+                {heroData.title}
+                <span className="block text-4xl lg:text-5xl text-yellow-400 mt-2">Delivered Faster Than The Planet Express Ship!</span>
               </h1>
               <p className="text-xl text-slate-300 mb-4">
-                {t('hero.description')}
+                No mission too big, no file too small - We deliver anywhere in the universe!
               </p>
               <p className="text-lg text-yellow-400/80 mb-8">
-                ⚡ {t('hero.features')}
+                ⚡ {heroData.description} - Powered by our fleet of delivery rockets!
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
-                  🚀 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5" />
+                  🚀 {heroData.ctaPrimary} <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button size="lg" variant="outline" className="border-2 border-yellow-500/50 text-yellow-300 hover:bg-yellow-500/10 hover:border-yellow-400 text-lg px-8">
-                  📺 {t('hero.ctaSecondary')}
+                  📺 {heroData.ctaSecondary}
                 </Button>
               </div>
               

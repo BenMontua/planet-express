@@ -1,0 +1,227 @@
+{
+  "header": {
+    "companyName": "Planet Express",
+    "tagline": "Express Delivery Since 2999",
+    "nav": {
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Good news everyone! Interplanetary file delivery at light speed!",
+    "title": "Lightning-Fast File Transfer",
+    "subtitle": "Delivered Faster Than The Planet Express Ship!",
+    "description": "No mission too big, no file too small - We deliver anywhere in the universe!",
+    "features": "Transfer files of any size with enterprise-grade security. No limits, no hassle. - Powered by our fleet of delivery rockets!",
+    "ctaPrimary": "Start Free Trial",
+    "ctaSecondary": "View Demo"
+  },
+  "stats": {
+    "filesTransferred": "Files Transferred",
+    "activeUsers": "Active Users",
+    "uptimeSLA": "Uptime SLA",
+    "countriesServed": "Countries Served"
+  },
+  "features": {
+    "badge": "DELIVERY FEATURES",
+    "title": "Powerful Features for Any Delivery Mission",
+    "subtitle": "From Earth to the edge of the universe - we've got the tech to deliver your files safely!",
+    "items": {
+      "unlimitedFileSize": {
+        "title": "Unlimited File Size",
+        "description": "Transfer files of any size without compression or quality loss. From documents to 4K videos."
+      },
+      "encryption": {
+        "title": "End-to-End Encryption",
+        "description": "Military-grade encryption ensures your files are secure from upload to download."
+      },
+      "speed": {
+        "title": "Lightning Speed",
+        "description": "Optimized transfer protocols deliver your files up to 10x faster than traditional methods."
+      },
+      "cdn": {
+        "title": "Global CDN",
+        "description": "Distributed network ensures fast transfers regardless of geographical location."
+      },
+      "collaboration": {
+        "title": "Team Collaboration",
+        "description": "Share files with your team, set permissions, and track who accessed what."
+      },
+      "api": {
+        "title": "API Integration",
+        "description": "Seamlessly integrate with your existing workflow using our powerful API."
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "DELIVERY PROCESS",
+    "title": "How Planet Express Delivers Your Files",
+    "subtitle": "Three simple steps to interplanetary file transfer",
+    "steps": {
+      "upload": {
+        "title": "Upload Your Files",
+        "description": "Drag and drop or select files from your device. Support for all file types."
+      },
+      "process": {
+        "title": "Secure Processing",
+        "description": "Files are encrypted and optimized for transfer through our global network."
+      },
+      "deliver": {
+        "title": "Share & Deliver",
+        "description": "Generate secure links and share instantly. Recipients download at maximum speed."
+      }
+    },
+    "learnMore": "Learn more"
+  },
+  "security": {
+    "badge": "MAXIMUM SECURITY",
+    "title": "Safer Than Professor Farnsworth's Safe",
+    "subtitle": "Military-grade protection for all your deliveries across space and time",
+    "features": {
+      "encryption": {
+        "title": "256-bit Encryption",
+        "description": "All files encrypted with AES-256 standard"
+      },
+      "zeroKnowledge": {
+        "title": "Zero-Knowledge",
+        "description": "We can't access your files, only you can"
+      },
+      "compliance": {
+        "title": "Compliance Ready",
+        "description": "GDPR, HIPAA, and SOC 2 compliant"
+      },
+      "autoDelete": {
+        "title": "Auto-Delete",
+        "description": "Files automatically deleted after expiry"
+      }
+    }
+  },
+  "pricing": {
+    "badge": "DELIVERY RATES",
+    "title": "Simple Pricing for All Solar Systems",
+    "subtitle": "Choose your delivery plan - No hidden fees, no Slurm required!",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "$0",
+        "period": "forever",
+        "description": "Perfect for personal use",
+        "cta": "Get Started",
+        "features": [
+          "Up to 2GB per transfer",
+          "5 transfers per day",
+          "7-day file retention",
+          "Basic encryption",
+          "Email support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$19",
+        "period": "per month",
+        "description": "For professionals and small teams",
+        "badge": "Best Value - Bender Approved!",
+        "cta": "Start Free Trial",
+        "features": [
+          "Up to 100GB per transfer",
+          "Unlimited transfers",
+          "30-day file retention",
+          "Advanced encryption",
+          "Priority support",
+          "Custom branding",
+          "API access"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "contact us",
+        "description": "For large organizations",
+        "cta": "Contact Sales",
+        "features": [
+          "Unlimited file size",
+          "Unlimited transfers",
+          "Custom retention period",
+          "Dedicated infrastructure",
+          "24/7 phone support",
+          "SSO & SAML",
+          "Advanced API",
+          "SLA guarantee"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "badge": "QUESTIONS?",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our delivery service",
+    "items": [
+      {
+        "question": "How secure is the file transfer?",
+        "answer": "All files are encrypted using military-grade AES-256 encryption during transfer and at rest. We use a zero-knowledge architecture, meaning only you can access your files. We're also compliant with GDPR, HIPAA, and SOC 2 standards."
+      },
+      {
+        "question": "What's the maximum file size I can transfer?",
+        "answer": "On the Free plan, you can transfer up to 2GB per transfer. Pro users can transfer up to 100GB, and Enterprise customers have no file size limits."
+      },
+      {
+        "question": "How long are files stored?",
+        "answer": "Files are stored for 7 days on the Free plan, 30 days on Pro, and custom retention periods for Enterprise. You can also set custom expiry times or delete files manually at any time."
+      },
+      {
+        "question": "Can I integrate this with my existing tools?",
+        "answer": "Yes! Pro and Enterprise plans include API access. We also offer pre-built integrations with popular tools like Slack, Dropbox, Google Drive, and more."
+      },
+      {
+        "question": "What happens if a transfer fails?",
+        "answer": "Our system automatically retries failed transfers. If a transfer can't be completed, you'll be notified immediately and can restart the transfer. All successfully uploaded data is preserved."
+      },
+      {
+        "question": "Do you offer a refund policy?",
+        "answer": "Yes, we offer a 30-day money-back guarantee on all paid plans. If you're not satisfied, contact our support team for a full refund."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "CONTACT CENTRAL",
+    "title": "Send Us A Transmission",
+    "subtitle": "Have questions? Our delivery crew is standing by! (Well, sitting mostly)",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help...",
+      "submit": "Send Transmission",
+      "submitting": "Sending Transmission..."
+    }
+  },
+  "footer": {
+    "tagline": "\"Our crew is replaceable. Your files aren't.\"",
+    "quote": "- Professor Hubert J. Farnsworth",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "api": "API",
+      "documentation": "Documentation",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security",
+      "compliance": "Compliance"
+    },
+    "copyright": "© 2024 Planet Express. All rights reserved."
+  }
+}
