@@ -90,9 +90,8 @@ const Landing = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-yellow-500/20">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-red-400/30 rounded-2xl blur-md"></div>
-              <img src="/planet-express-logo.png" alt="Planet Express" className="relative w-16 h-16 object-contain" />
+            <div className="w-20 h-20 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center p-3 shadow-xl border-2 border-slate-200/50">
+              <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-2xl font-bold text-white">Planet Express</span>
@@ -491,9 +490,8 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-red-400/30 rounded-2xl blur-md"></div>
-                  <img src="/planet-express-logo.png" alt="Planet Express" className="relative w-16 h-16 object-contain" />
+                <div className="w-20 h-20 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center p-3 shadow-xl border-2 border-slate-200/50">
+                  <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <span className="text-2xl font-bold text-white">Planet Express</span>
