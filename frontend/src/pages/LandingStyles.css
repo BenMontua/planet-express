@@ -1,0 +1,185 @@
+/* Landing Page Styles */
+
+.landing-page {
+  background: #020617;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Hover Effects */
+.landing-page [class*="card"]:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Button Hover Effects */
+.landing-page button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.landing-page button:hover {
+  transform: translateY(-2px);
+}
+
+.landing-page button:active {
+  transform: translateY(0);
+}
+
+/* Link Hover Effects */
+.landing-page a {
+  transition: color 0.2s ease;
+}
+
+/* Image Hover Effects */
+.landing-page img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.landing-page img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .landing-page h1 {
+    font-size: 2.5rem;
+  }
+  
+  .landing-page h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Grid Layout Enhancement */
+.landing-page [class*="grid"] {
+  gap: 2rem;
+}
+
+/* Focus States */
+.landing-page input:focus,
+.landing-page textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading Animation for Images */
+.landing-page img {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Backdrop Blur Enhancement */
+.backdrop-blur-xl {
+  backdrop-filter: blur(20px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+/* Shadow Enhancements */
+.shadow-glow {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+/* Interactive Border Effect */
+.border-animate {
+  position: relative;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.border-animate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-animate:hover::before {
+  opacity: 1;
+}
