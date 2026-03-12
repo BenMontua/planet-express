@@ -1,4 +1,4 @@
-/* Landing Page Styles */
+/* Landing Page Styles - Planet Express Theme */
 
 .landing-page {
   background: #020617;
@@ -41,18 +41,34 @@
   }
 }
 
-/* Card Hover Effects */
+@keyframes rocket-trail {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(10px);
+    opacity: 0.3;
+  }
+}
+
+/* Card Hover Effects with Yellow Glow */
 .landing-page [class*="card"]:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
 }
 
 /* Button Hover Effects */
 .landing-page button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border-radius: 12px;
 }
 
 .landing-page button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 179, 8, 0.3);
 }
 
 .landing-page button:active {
@@ -84,15 +100,15 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* Gradient Text Effect */
+/* Gradient Text Effect - Yellow/Red Theme */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #eab308 0%, #ef4444 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Planet Express Theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -102,12 +118,12 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: linear-gradient(180deg, #eab308, #dc2626);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: linear-gradient(180deg, #facc15, #ef4444);
 }
 
 /* Responsive Typography */
@@ -126,12 +142,12 @@ section {
   gap: 2rem;
 }
 
-/* Focus States */
+/* Focus States - Yellow Theme */
 .landing-page input:focus,
 .landing-page textarea:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #eab308;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
 }
 
 /* Loading Animation for Images */
@@ -155,15 +171,15 @@ section {
   backdrop-filter: blur(8px);
 }
 
-/* Shadow Enhancements */
+/* Shadow Enhancements - Yellow/Red Glow */
 .shadow-glow {
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 40px rgba(234, 179, 8, 0.4);
 }
 
-/* Interactive Border Effect */
+/* Interactive Border Effect - Planet Express Colors */
 .border-animate {
   position: relative;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(234, 179, 8, 0.3);
 }
 
 .border-animate::before {
@@ -172,7 +188,7 @@ section {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  background: linear-gradient(135deg, #eab308, #dc2626);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -182,4 +198,20 @@ section {
 
 .border-animate:hover::before {
   opacity: 1;
+}
+
+/* Rounded Corners Everywhere - Cartoon Style */
+.landing-page [class*="rounded"] {
+  border-radius: 16px;
+}
+
+/* Comic-style Shadow for Cards */
+.landing-page .card-comic {
+  box-shadow: 4px 4px 0px rgba(234, 179, 8, 0.3);
+}
+
+/* Retro Sci-Fi Glow */
+.retro-glow {
+  text-shadow: 0 0 10px rgba(234, 179, 8, 0.5),
+               0 0 20px rgba(220, 38, 38, 0.3);
 }

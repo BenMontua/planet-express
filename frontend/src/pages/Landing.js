@@ -87,24 +87,26 @@ const Landing = () => {
   return (
     <div className="landing-page">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-blue-500/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-yellow-500/20">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <img src="/planet-express-logo.png" alt="Planet Express" className="w-12 h-12 object-contain" />
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shadow-lg">
+              <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
+            </div>
             <span className="text-xl font-bold text-white">Planet Express</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-slate-300 hover:text-blue-400 transition-colors">Features</a>
-            <a href="#how-it-works" className="text-slate-300 hover:text-blue-400 transition-colors">How It Works</a>
-            <a href="#pricing" className="text-slate-300 hover:text-blue-400 transition-colors">Pricing</a>
-            <a href="#faq" className="text-slate-300 hover:text-blue-400 transition-colors">FAQ</a>
-            <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
+            <a href="#features" className="text-slate-300 hover:text-yellow-400 transition-colors">Features</a>
+            <a href="#how-it-works" className="text-slate-300 hover:text-yellow-400 transition-colors">How It Works</a>
+            <a href="#pricing" className="text-slate-300 hover:text-yellow-400 transition-colors">Pricing</a>
+            <a href="#faq" className="text-slate-300 hover:text-yellow-400 transition-colors">FAQ</a>
+            <a href="#contact" className="text-slate-300 hover:text-yellow-400 transition-colors">Contact</a>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-blue-500/10">
+            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-yellow-500/10">
               Sign In
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
               Get Started
             </Button>
           </div>
@@ -115,15 +117,16 @@ const Landing = () => {
       <section className="hero-section pt-32 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full filter blur-[100px]"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full filter blur-[120px]"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500 rounded-full filter blur-[100px]"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500 rounded-full filter blur-[120px]"></div>
+          <div className="absolute top-40 right-20 w-80 h-80 bg-blue-500 rounded-full filter blur-[110px]"></div>
         </div>
         
         <div className={`container mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-6 bg-blue-500/10 text-blue-400 border-blue-500/30 hover:bg-blue-500/20">
-                <Zap className="w-4 h-4 mr-2" /> Now with 10x faster transfers
+              <Badge className="mb-6 bg-red-500/20 text-red-300 border-red-500/50 hover:bg-red-500/30 shadow-lg">
+                <Zap className="w-4 h-4 mr-2" /> Good news everyone! Now 10x faster
               </Badge>
               <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 {heroData.title}
@@ -135,10 +138,10 @@ const Landing = () => {
                 {heroData.description}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8">
+                <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold text-lg px-8 shadow-xl">
                   {heroData.ctaPrimary} <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 text-lg px-8">
+                <Button size="lg" variant="outline" className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 text-lg px-8">
                   {heroData.ctaSecondary}
                 </Button>
               </div>
@@ -155,7 +158,7 @@ const Landing = () => {
             </div>
             
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl blur-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-red-500/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
               <img 
                 src={heroData.heroImage} 
                 alt="File Transfer Technology" 
@@ -184,12 +187,12 @@ const Landing = () => {
               return (
                 <Card 
                   key={feature.id} 
-                  className="bg-slate-900/50 border-slate-800 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm"
+                  className="bg-slate-900/50 border-slate-800 hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm rounded-2xl"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-red-500/20 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-yellow-400" />
                     </div>
                     <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
                   </CardHeader>
@@ -224,21 +227,21 @@ const Landing = () => {
                 className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="text-6xl font-bold text-blue-500/20 mb-4">{step.step}</div>
+                  <div className="text-6xl font-bold text-yellow-500/30 mb-4">{step.step}</div>
                   <h3 className="text-3xl font-bold text-white mb-4">{step.title}</h3>
                   <p className="text-lg text-slate-400 mb-6">{step.description}</p>
-                  <div className="flex items-center space-x-2 text-blue-400">
+                  <div className="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer">
                     <span>Learn more</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <div className="relative">
-                    <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-red-500/10 to-blue-500/10 rounded-3xl blur-xl"></div>
                     <img 
                       src={step.image} 
                       alt={step.title} 
-                      className="relative rounded-2xl shadow-xl border border-blue-500/20"
+                      className="relative rounded-3xl shadow-xl border-2 border-yellow-500/20"
                     />
                   </div>
                 </div>
@@ -251,7 +254,7 @@ const Landing = () => {
       {/* Security Section */}
       <section className="py-20 px-6 bg-slate-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500 rounded-full filter blur-[150px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-yellow-500 via-red-500 to-blue-500 rounded-full filter blur-[150px]"></div>
         </div>
         
         <div className="container mx-auto relative z-10">
@@ -270,10 +273,10 @@ const Landing = () => {
               return (
                 <div 
                   key={feature.id} 
-                  className="text-center p-6 rounded-xl bg-slate-900/30 border border-blue-500/20 backdrop-blur-sm hover:border-blue-500/50 transition-all"
+                  className="text-center p-6 rounded-2xl bg-slate-900/30 border-2 border-red-500/30 backdrop-blur-sm hover:border-red-500/60 transition-all"
                 >
-                  <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-blue-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-8 h-8 text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
                   <p className="text-slate-400">{feature.description}</p>
@@ -325,7 +328,7 @@ const Landing = () => {
                   <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start space-x-3">
-                        <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-300">{feature}</span>
                       </li>
                     ))}
@@ -333,9 +336,9 @@ const Landing = () => {
                 </CardContent>
                 <CardFooter>
                   <Button 
-                    className={`w-full ${
+                    className={`w-full rounded-xl ${
                       plan.popular 
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                        ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg' 
                         : 'bg-slate-800 hover:bg-slate-700 text-white'
                     }`}
                   >
@@ -365,9 +368,9 @@ const Landing = () => {
               <AccordionItem 
                 key={faq.id} 
                 value={`item-${faq.id}`}
-                className="bg-slate-900/50 border border-slate-800 rounded-lg px-6 backdrop-blur-sm"
+                className="bg-slate-900/50 border border-slate-800 rounded-xl px-6 backdrop-blur-sm hover:border-yellow-500/30"
               >
-                <AccordionTrigger className="text-white hover:text-blue-400 text-left">
+                <AccordionTrigger className="text-white hover:text-yellow-400 text-left">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-slate-400">
@@ -391,7 +394,7 @@ const Landing = () => {
             </p>
           </div>
           
-          <Card className="bg-slate-900/50 border-slate-800 backdrop-blur-sm">
+          <Card className="bg-slate-900/50 border-2 border-yellow-500/30 backdrop-blur-sm rounded-2xl">
             <CardContent className="pt-6">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div className="space-y-2">
@@ -446,7 +449,7 @@ const Landing = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg rounded-xl"
                   size="lg"
                   disabled={isSubmitting}
                 >
@@ -464,42 +467,44 @@ const Landing = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img src="/planet-express-logo.png" alt="Planet Express" className="w-12 h-12 object-contain" />
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shadow-lg">
+                  <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
+                </div>
                 <span className="text-xl font-bold text-white">Planet Express</span>
               </div>
               <p className="text-slate-400">
-                Lightning-fast, secure file transfers for modern teams.
+                Our crew is replaceable. Your files aren't.
               </p>
             </div>
             
             <div>
               <h3 className="text-white font-semibold mb-4">Product</h3>
               <ul className="space-y-2">
-                <li><a href="#features" className="text-slate-400 hover:text-blue-400 transition-colors">Features</a></li>
-                <li><a href="#pricing" className="text-slate-400 hover:text-blue-400 transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">API</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Documentation</a></li>
+                <li><a href="#features" className="text-slate-400 hover:text-yellow-400 transition-colors">Features</a></li>
+                <li><a href="#pricing" className="text-slate-400 hover:text-yellow-400 transition-colors">Pricing</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">API</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Documentation</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-white font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">About</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Blog</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Careers</a></li>
-                <li><a href="#contact" className="text-slate-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">About</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Blog</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Careers</a></li>
+                <li><a href="#contact" className="text-slate-400 hover:text-yellow-400 transition-colors">Contact</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-white font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Privacy</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Terms</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Security</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Compliance</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Privacy</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Terms</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Security</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Compliance</a></li>
               </ul>
             </div>
           </div>
@@ -509,9 +514,9 @@ const Landing = () => {
               © 2024 Planet Express. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Twitter</a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">GitHub</a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">LinkedIn</a>
+              <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Twitter</a>
+              <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">GitHub</a>
+              <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>
