@@ -205,7 +205,7 @@ const Landing = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-red-500/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
               <img 
-                src={heroData.heroImage} 
+                src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxkYXRhJTIwdHJhbnNmZXJ8ZW58MHx8fHwxNzczMzA3NTUzfDA&ixlib=rb-4.1.0&q=85" 
                 alt="File Transfer Technology" 
                 className="relative rounded-2xl shadow-2xl border border-blue-500/20"
               />
@@ -242,11 +242,11 @@ const Landing = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-red-500/20 rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-yellow-400" />
                     </div>
-                    <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
+                    <CardTitle className="text-white text-xl">{t(`features.items.${feature.key}.title`)}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-slate-400 text-base">
-                      {feature.description}
+                      {t(`features.items.${feature.key}.description`)}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -272,17 +272,17 @@ const Landing = () => {
           </div>
           
           <div className="space-y-16">
-            {howItWorks.map((step, index) => (
+            {howItWorksSteps.map((step, index) => (
               <div 
                 key={step.id} 
                 className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="text-6xl font-bold text-yellow-500/30 mb-4">{step.step}</div>
-                  <h3 className="text-3xl font-bold text-white mb-4">{step.title}</h3>
-                  <p className="text-lg text-slate-400 mb-6">{step.description}</p>
+                  <h3 className="text-3xl font-bold text-white mb-4">{t(`howItWorks.steps.${step.key}.title`)}</h3>
+                  <p className="text-lg text-slate-400 mb-6">{t(`howItWorks.steps.${step.key}.description`)}</p>
                   <div className="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer">
-                    <span>Learn more</span>
+                    <span>{t('howItWorks.learnMore')}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -291,7 +291,7 @@ const Landing = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-red-500/10 to-blue-500/10 rounded-3xl blur-xl"></div>
                     <img 
                       src={step.image} 
-                      alt={step.title} 
+                      alt={t(`howItWorks.steps.${step.key}.title`)} 
                       className="relative rounded-3xl shadow-xl border-2 border-yellow-500/20"
                     />
                   </div>
@@ -332,8 +332,8 @@ const Landing = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-slate-400">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{t(`security.features.${feature.key}.title`)}</h3>
+                  <p className="text-slate-400">{t(`security.features.${feature.key}.description`)}</p>
                 </div>
               );
             })}
@@ -360,30 +360,30 @@ const Landing = () => {
             {pricingPlans.map((plan) => (
               <Card 
                 key={plan.id} 
-                className={`relative ${
+                className={`relative rounded-2xl ${
                   plan.popular 
-                    ? 'bg-gradient-to-b from-blue-900/50 to-slate-900/50 border-blue-500 scale-105' 
+                    ? 'bg-gradient-to-b from-yellow-900/30 via-red-900/20 to-slate-900/50 border-2 border-yellow-500 scale-105 shadow-xl shadow-yellow-500/20' 
                     : 'bg-slate-900/50 border-slate-800'
-                } hover:border-blue-500/50 transition-all duration-300`}
+                } hover:border-yellow-500/50 transition-all duration-300`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-blue-600 text-white">Most Popular</Badge>
+                    <Badge className="bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 text-slate-900 font-bold shadow-lg animate-pulse">{t(`pricing.plans.${plan.key}.badge`)}</Badge>
                   </div>
                 )}
                 <CardHeader>
-                  <CardTitle className="text-white text-2xl">{plan.name}</CardTitle>
-                  <CardDescription className="text-slate-400">{plan.description}</CardDescription>
+                  <CardTitle className="text-white text-2xl">{t(`pricing.plans.${plan.key}.name`)}</CardTitle>
+                  <CardDescription className="text-slate-400">{t(`pricing.plans.${plan.key}.description`)}</CardDescription>
                   <div className="mt-4">
-                    <span className="text-5xl font-bold text-white">{plan.price}</span>
-                    {plan.price !== 'Custom' && (
-                      <span className="text-slate-400 ml-2">/ {plan.period}</span>
+                    <span className="text-5xl font-bold text-white">{t(`pricing.plans.${plan.key}.price`)}</span>
+                    {t(`pricing.plans.${plan.key}.price`) !== 'Custom' && t(`pricing.plans.${plan.key}.price`) !== 'Individuell' && (
+                      <span className="text-slate-400 ml-2">/ {t(`pricing.plans.${plan.key}.period`)}</span>
                     )}
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {plan.features.map((feature, index) => (
+                    {t(`pricing.plans.${plan.key}.features`, { returnObjects: true }).map((feature, index) => (
                       <li key={index} className="flex items-start space-x-3">
                         <Check className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-300">{feature}</span>
@@ -399,7 +399,7 @@ const Landing = () => {
                         : 'bg-slate-800 hover:bg-slate-700 text-white border border-yellow-500/30'
                     }`}
                   >
-                    {plan.cta}
+                    {t(`pricing.plans.${plan.key}.cta`)}
                   </Button>
                 </CardFooter>
               </Card>
@@ -424,10 +424,10 @@ const Landing = () => {
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq) => (
+            {t('faq.items', { returnObjects: true }).map((faq, index) => (
               <AccordionItem 
-                key={faq.id} 
-                value={`item-${faq.id}`}
+                key={index} 
+                value={`item-${index}`}
                 className="bg-slate-900/50 border border-slate-800 rounded-xl px-6 backdrop-blur-sm hover:border-yellow-500/30"
               >
                 <AccordionTrigger className="text-white hover:text-yellow-400 text-left">
@@ -463,14 +463,14 @@ const Landing = () => {
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-white flex items-center space-x-2">
                     <User className="w-4 h-4" />
-                    <span>Name</span>
+                    <span>{t('contact.form.name')}</span>
                   </Label>
                   <Input
                     id="name"
                     name="name"
                     value={contactForm.name}
                     onChange={handleInputChange}
-                    placeholder="Your name"
+                    placeholder={t('contact.form.namePlaceholder')}
                     required
                     className="bg-slate-800/50 border-slate-700 text-white placeholder:text-slate-500"
                   />
@@ -479,7 +479,7 @@ const Landing = () => {
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-white flex items-center space-x-2">
                     <Mail className="w-4 h-4" />
-                    <span>Email</span>
+                    <span>{t('contact.form.email')}</span>
                   </Label>
                   <Input
                     id="email"
@@ -487,7 +487,7 @@ const Landing = () => {
                     type="email"
                     value={contactForm.email}
                     onChange={handleInputChange}
-                    placeholder="your.email@example.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     required
                     className="bg-slate-800/50 border-slate-700 text-white placeholder:text-slate-500"
                   />
@@ -496,14 +496,14 @@ const Landing = () => {
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-white flex items-center space-x-2">
                     <MessageSquare className="w-4 h-4" />
-                    <span>Message</span>
+                    <span>{t('contact.form.message')}</span>
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={contactForm.message}
                     onChange={handleInputChange}
-                    placeholder="Tell us how we can help..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     rows={5}
                     required
                     className="bg-slate-800/50 border-slate-700 text-white placeholder:text-slate-500"
@@ -517,7 +517,7 @@ const Landing = () => {
                   disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? '🚀 Sending Transmission...' : '📡 Send Transmission'}
+                  {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
                 </Button>
               </form>
             </CardContent>
@@ -535,52 +535,52 @@ const Landing = () => {
                   <img src="/planet-express-logo.png" alt="Planet Express" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <span className="text-2xl font-bold text-white">Planet Express</span>
-                  <div className="text-xs text-yellow-400 font-semibold">Express Delivery Since 2999</div>
+                  <span className="text-2xl font-bold text-white">{t('header.companyName')}</span>
+                  <div className="text-xs text-yellow-400 font-semibold">{t('header.tagline')}</div>
                 </div>
               </div>
               <p className="text-slate-400">
-                "Our crew is replaceable. Your files aren't."
+                {t('footer.tagline')}
               </p>
               <p className="text-slate-500 text-sm mt-2 italic">
-                - Professor Hubert J. Farnsworth
+                {t('footer.quote')}
               </p>
             </div>
             
             <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
+              <h3 className="text-white font-semibold mb-4">{t('footer.product')}</h3>
               <ul className="space-y-2">
-                <li><a href="#features" className="text-slate-400 hover:text-yellow-400 transition-colors">Features</a></li>
-                <li><a href="#pricing" className="text-slate-400 hover:text-yellow-400 transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">API</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Documentation</a></li>
+                <li><a href="#features" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.features')}</a></li>
+                <li><a href="#pricing" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.pricing')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.api')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.documentation')}</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <h3 className="text-white font-semibold mb-4">{t('footer.company')}</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">About</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Blog</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Careers</a></li>
-                <li><a href="#contact" className="text-slate-400 hover:text-yellow-400 transition-colors">Contact</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.about')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.blog')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.careers')}</a></li>
+                <li><a href="#contact" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.contact')}</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-white font-semibold mb-4">Legal</h3>
+              <h3 className="text-white font-semibold mb-4">{t('footer.legal')}</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Privacy</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Terms</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Security</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Compliance</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.privacy')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.terms')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.security')}</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">{t('footer.links.compliance')}</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm mb-4 md:mb-0">
-              © 2024 Planet Express. All rights reserved.
+              {t('footer.copyright')}
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">Twitter</a>
