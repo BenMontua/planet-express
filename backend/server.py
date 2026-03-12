@@ -1,14 +1,15 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List
 import uuid
 from datetime import datetime, timezone
+from email_service import send_contact_email
 
 
 ROOT_DIR = Path(__file__).parent
@@ -36,6 +37,15 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+class ContactFormSubmission(BaseModel):
+    name: str
+    email: EmailStr
+    message: str
+
+class ContactFormResponse(BaseModel):
+    success: bool
+    message: str
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
@@ -65,6 +75,42 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.post("/contact", response_model=ContactFormResponse)
+async def submit_contact_form(form_data: ContactFormSubmission):
+    """
+    Handle contact form submission and send email
+    """
+    try:
+        # Save to database
+        contact_dict = form_data.model_dump()
+        contact_dict['id'] = str(uuid.uuid4())
+        contact_dict['timestamp'] = datetime.now(timezone.utc).isoformat()
+        await db.contact_submissions.insert_one(contact_dict)
+        
+        # Send email
+        email_result = await send_contact_email(
+            name=form_data.name,
+            email=form_data.email,
+            message=form_data.message
+        )
+        
+        if email_result["success"]:
+            return ContactFormResponse(
+                success=True,
+                message="Thank you for contacting us! We'll get back to you soon."
+            )
+        else:
+            # Email failed but saved to DB
+            logger.warning(f"Email sending failed: {email_result['message']}")
+            return ContactFormResponse(
+                success=True,
+                message="Your message has been saved. We'll respond as soon as possible."
+            )
+    
+    except Exception as e:
+        logger.error(f"Error processing contact form: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process contact form")
 
 # Include the router in the main app
 app.include_router(api_router)

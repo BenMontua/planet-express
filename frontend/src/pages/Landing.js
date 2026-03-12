@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { 
   HardDrive, Shield, Zap, Globe, Users, Code, 
   Lock, EyeOff, FileCheck, Trash2, ArrowRight, 
@@ -28,6 +29,9 @@ import {
   testimonials
 } from '../data/mock';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
 const iconMap = {
   harddrive: HardDrive,
   shield: Shield,
@@ -48,16 +52,31 @@ const Landing = () => {
     message: ''
   });
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    // Mock submission
-    toast.success('Message sent! We\'ll get back to you soon.');
-    setContactForm({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await axios.post(`${API}/contact`, contactForm);
+      
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setContactForm({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast.error('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -71,10 +90,8 @@ const Landing = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-blue-500/20">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white">FileFlux</span>
+            <img src="/planet-express-logo.png" alt="Planet Express" className="w-12 h-12 object-contain" />
+            <span className="text-xl font-bold text-white">Planet Express</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-slate-300 hover:text-blue-400 transition-colors">Features</a>
@@ -431,9 +448,10 @@ const Landing = () => {
                   type="submit" 
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                   size="lg"
+                  disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
@@ -447,10 +465,8 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white">FileFlux</span>
+                <img src="/planet-express-logo.png" alt="Planet Express" className="w-12 h-12 object-contain" />
+                <span className="text-xl font-bold text-white">Planet Express</span>
               </div>
               <p className="text-slate-400">
                 Lightning-fast, secure file transfers for modern teams.
@@ -490,7 +506,7 @@ const Landing = () => {
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm mb-4 md:mb-0">
-              © 2024 FileFlux. All rights reserved.
+              © 2024 Planet Express. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">Twitter</a>
