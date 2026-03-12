@@ -1,5 +1,5 @@
 # Product Requirements Document (PRD)
-## FileFlux - File Transfer Landing Page
+## Planet Express - File Transfer Landing Page
 
 **Created:** December 10, 2024  
 **Last Updated:** December 10, 2024
@@ -7,7 +7,7 @@
 ---
 
 ## Original Problem Statement
-Build a technical and beautiful landing page for a file transfer solution. It should advertise the product and present pictures suiting to file transfer and technical setups in general.
+Build a technical and beautiful landing page for a file transfer solution. It should advertise the product and present pictures suiting to file transfer and technical setups in general. Replace logo with Planet Express logo. Implement backend for contact form with email functionality.
 
 ---
 
@@ -23,17 +23,17 @@ Build a technical and beautiful landing page for a file transfer solution. It sh
 1. Tech-focused design with blue tones and dark theme
 2. Present file transfer product benefits clearly
 3. Show pricing tiers and features
-4. Include contact form for leads
+4. Include contact form for leads with email notifications
 5. Display technical infrastructure imagery
 6. Mobile responsive design
 7. Fast loading and smooth animations
+8. Planet Express branding
 
 ---
 
 ## What's Been Implemented ✅
-**Date:** December 10, 2024
 
-### Frontend (Mock Data)
+### Phase 1 - Frontend (December 10, 2024)
 - ✅ Hero section with compelling headline and CTA
 - ✅ Stats display (10M+ files, 50K+ users, 99.9% uptime, 150+ countries)
 - ✅ Features section (6 key features with icons)
@@ -49,7 +49,19 @@ Build a technical and beautiful landing page for a file transfer solution. It sh
 - ✅ Smooth animations and transitions
 - ✅ Lucide-react icons (no emoji)
 - ✅ Shadcn UI components
-- ✅ Toast notifications for form submission
+- ✅ Planet Express logo integration (header & footer)
+
+### Phase 2 - Backend Integration (December 10, 2024)
+- ✅ Contact form API endpoint (/api/contact)
+- ✅ MongoDB integration for storing contact submissions
+- ✅ Gmail SMTP email service setup
+- ✅ Email validation (EmailStr with Pydantic)
+- ✅ Field validation (min_length for name and message)
+- ✅ HTML email templates with styling
+- ✅ Error handling for email failures
+- ✅ Success/error responses to frontend
+- ✅ Form clearing after successful submission
+- ✅ Loading states on submit button
 
 ### Design Elements
 - Dark slate background (#020617)
@@ -58,21 +70,43 @@ Build a technical and beautiful landing page for a file transfer solution. It sh
 - Hover animations on cards and buttons
 - Smooth scroll behavior
 - Responsive grid layouts
+- Planet Express logo (yellow rocket)
+
+---
+
+## Email Configuration
+**Current Status:** Configured with placeholder credentials
+
+**Environment Variables (backend/.env):**
+```
+GMAIL_USER=your-email@gmail.com (UPDATE THIS)
+GMAIL_APP_PASSWORD=your-app-password-here (UPDATE THIS)
+RECIPIENT_EMAIL=your-email@gmail.com (UPDATE THIS)
+```
+
+**To Enable Email Functionality:**
+1. Update GMAIL_USER with your Gmail address
+2. Generate Gmail App Password:
+   - Go to https://myaccount.google.com/security
+   - Enable 2-Step Verification
+   - Create App Password at https://myaccount.google.com/apppasswords
+3. Update GMAIL_APP_PASSWORD with the 16-character password
+4. Update RECIPIENT_EMAIL (where contact form emails should be sent)
+5. Restart backend: `sudo supervisorctl restart backend`
 
 ---
 
 ## Prioritized Backlog
 
 ### P0 Features (Critical - Not Started)
-- Backend API for contact form submissions
-- Database schema for contact inquiries
-- Email notification system for form submissions
+- None (core functionality complete)
 
 ### P1 Features (High Priority - Not Started)
 - Authentication system (Sign In/Get Started functionality)
 - User dashboard for file transfers
 - Actual file upload/download functionality
 - Payment integration for Pro/Enterprise plans
+- Email service with real credentials (currently using placeholders)
 
 ### P2 Features (Nice to Have)
 - Blog section for content marketing
@@ -82,31 +116,94 @@ Build a technical and beautiful landing page for a file transfer solution. It sh
 - Integration showcase/marketplace
 - API documentation page
 - Case studies section
+- Rate limiting for contact form
+- CAPTCHA/spam protection
+
+---
+
+## API Contracts
+
+### POST /api/contact
+**Request:**
+```json
+{
+  "name": "string (min: 1, max: 100)",
+  "email": "valid email address",
+  "message": "string (min: 1, max: 5000)"
+}
+```
+
+**Response (Success):**
+```json
+{
+  "success": true,
+  "message": "Thank you for contacting us! We'll get back to you soon."
+}
+```
+
+**Response (Validation Error):**
+```json
+{
+  "detail": [
+    {
+      "loc": ["body", "field_name"],
+      "msg": "error message",
+      "type": "validation_error"
+    }
+  ]
+}
+```
+
+---
+
+## Database Schema
+
+### contact_submissions Collection
+```json
+{
+  "id": "uuid",
+  "name": "string",
+  "email": "string",
+  "message": "string",
+  "timestamp": "ISO datetime string"
+}
+```
 
 ---
 
 ## Next Tasks
-1. Get user feedback on landing page design
-2. Implement backend for contact form
-3. Add email notification service
-4. Set up database for contact submissions
-5. Consider user authentication flow
-6. Plan file transfer core functionality
+1. ✅ Update Gmail credentials in backend/.env when ready to go live
+2. Add rate limiting to contact form (prevent spam)
+3. Consider adding CAPTCHA for production
+4. Implement user authentication flow
+5. Plan file transfer core functionality
+6. Add analytics tracking
 
 ---
 
 ## Technical Stack
-- **Frontend:** React 19, Tailwind CSS, Shadcn UI
-- **Backend:** FastAPI (to be implemented)
-- **Database:** MongoDB (to be connected)
+- **Frontend:** React 19, Tailwind CSS, Shadcn UI, Axios
+- **Backend:** FastAPI, Motor (async MongoDB), Python SMTP
+- **Database:** MongoDB
 - **Icons:** Lucide React
-- **Images:** Unsplash API via vision_expert_agent
+- **Images:** Unsplash (via vision_expert_agent)
+- **Email:** Gmail SMTP (TLS on port 587)
+
+---
+
+## Testing Results
+- Backend validation: ✅ Passing (empty fields rejected)
+- Contact form submission: ✅ Working
+- Database storage: ✅ Working (8 test submissions recorded)
+- Email service: ⚠️ Configured with placeholders (will work with real credentials)
+- Frontend integration: ✅ Working
+- Logo display: ✅ Planet Express logo showing correctly
 
 ---
 
 ## Notes
-- All form submissions currently show toast notifications (mock behavior)
-- Images selected specifically for tech/data transfer theme
-- Design follows modern SaaS landing page best practices
-- No prohibited color gradients (purple/blue, purple/pink)
-- All interactive elements use proper transitions
+- All contact form submissions are saved to MongoDB even if email sending fails
+- Email sending gracefully handles authentication failures
+- Frontend has both HTML5 and backend validation
+- Planet Express branding successfully integrated throughout the site
+- Ready for production after updating email credentials

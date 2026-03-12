@@ -39,9 +39,9 @@ class StatusCheckCreate(BaseModel):
     client_name: str
 
 class ContactFormSubmission(BaseModel):
-    name: str
+    name: str = Field(..., min_length=1, max_length=100, description="Contact name")
     email: EmailStr
-    message: str
+    message: str = Field(..., min_length=1, max_length=5000, description="Contact message")
 
 class ContactFormResponse(BaseModel):
     success: bool
