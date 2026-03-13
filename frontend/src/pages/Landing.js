@@ -147,9 +147,11 @@ const Landing = () => {
           </div>
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
-              {t('header.getStarted')}
-            </Button>
+            <a href="https://planet-express-dev.phantomrausch.de/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
+                {t('header.getStarted')}
+              </Button>
+            </a>
           </div>
         </nav>
       </header>
@@ -180,9 +182,11 @@ const Landing = () => {
                 ⚡ {t('hero.features')}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
-                  🚀 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <a href="https://planet-express-dev.phantomrausch.de/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
+                    🚀 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
                 <Button size="lg" variant="outline" className="border-2 border-yellow-500/50 text-yellow-300 hover:bg-yellow-500/10 hover:border-yellow-400 text-lg px-8">
                   📺 {t('hero.ctaSecondary')}
                 </Button>
