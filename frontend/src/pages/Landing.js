@@ -147,9 +147,6 @@ const Landing = () => {
           </div>
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-yellow-500/10">
-              {t('header.signIn')}
-            </Button>
             <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
               {t('header.getStarted')}
             </Button>
