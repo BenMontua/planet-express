@@ -147,12 +147,11 @@ const Landing = () => {
           </div>
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-yellow-500/10">
-              {t('header.signIn')}
-            </Button>
-            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
-              {t('header.getStarted')}
-            </Button>
+            <a href="https://planet-express-dev.phantomrausch.de/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold shadow-lg">
+                {t('header.getStarted')}
+              </Button>
+            </a>
           </div>
         </nav>
       </header>
@@ -183,9 +182,11 @@ const Landing = () => {
                 ⚡ {t('hero.features')}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
-                  🚀 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <a href="https://planet-express-dev.phantomrausch.de/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-600 hover:via-yellow-600 hover:to-amber-700 text-slate-900 font-bold text-lg px-8 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all">
+                    🚀 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
                 <Button size="lg" variant="outline" className="border-2 border-yellow-500/50 text-yellow-300 hover:bg-yellow-500/10 hover:border-yellow-400 text-lg px-8">
                   📺 {t('hero.ctaSecondary')}
                 </Button>
@@ -219,13 +220,13 @@ const Landing = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
-              ⚡ DELIVERY FEATURES
+              {t('features.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Powerful Features for Any Delivery Mission
+              {t('features.title')}
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              From Earth to the edge of the universe - we've got the tech to deliver your files safely!
+              {t('features.subtitle')}
             </p>
           </div>
           
@@ -261,13 +262,13 @@ const Landing = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
-              🛸 DELIVERY PROCESS
+              {t('howItWorks.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              How Planet Express Delivers Your Files
+              {t('howItWorks.title')}
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Three simple steps to interplanetary file transfer
+              {t('howItWorks.subtitle')}
             </p>
           </div>
           
@@ -311,13 +312,13 @@ const Landing = () => {
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-red-500/20 text-red-300 border-red-500/50">
-              🔒 MAXIMUM SECURITY
+              {t('security.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Safer Than Professor Farnsworth's Safe
+              {t('security.title')}
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Military-grade protection for all your deliveries across space and time
+              {t('security.subtitle')}
             </p>
           </div>
           
@@ -346,13 +347,13 @@ const Landing = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
-              💰 DELIVERY RATES
+              {t('pricing.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Simple Pricing for All Solar Systems
+              {t('pricing.title')}
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Choose your delivery plan - No hidden fees, no Slurm required!
+              {t('pricing.subtitle')}
             </p>
           </div>
           
@@ -413,13 +414,13 @@ const Landing = () => {
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
-              ❓ QUESTIONS?
+              {t('faq.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Frequently Asked Questions
+              {t('faq.title')}
             </h2>
             <p className="text-xl text-slate-400">
-              Everything you need to know about our delivery service
+              {t('faq.subtitle')}
             </p>
           </div>
           
@@ -447,13 +448,13 @@ const Landing = () => {
         <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">
-              📡 CONTACT CENTRAL
+              {t('contact.badge')}
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              Send Us A Transmission
+              {t('contact.title')}
             </h2>
             <p className="text-xl text-slate-400">
-              Have questions? Our delivery crew is standing by! (Well, sitting mostly)
+              {t('contact.subtitle')}
             </p>
           </div>
           
